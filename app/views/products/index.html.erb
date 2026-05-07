@@ -1,7 +1,31 @@
 <h1>Marketplace</h1>
 
-<% @products.each do |product| %>
-  <p>
+
+<div>
+  <button onclick="setView('grid')">Grid View</button>
+  <button onclick="setView('list')">List View</button>
+</div>
+
+<div id="products" class="grid-view">
+  <% @products.each do |product| %>
+    <div class="product-card">
+       <p>
     <%= link_to product.title, product_path(product) %> - Rs <%= product.price %>
   </p>
-<% end %>
+    </div>
+  <% end %>
+</div>
+
+<script>
+function setView(view) {
+  const container = document.getElementById("products");
+
+  if (view === "grid") {
+    container.classList.remove("list-view");
+    container.classList.add("grid-view");
+  } else {
+    container.classList.remove("grid-view");
+    container.classList.add("list-view");
+  }
+}
+</script>
