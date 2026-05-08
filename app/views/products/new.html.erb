@@ -1,6 +1,6 @@
 <%= form_with model: @product do |f| %>
-  <%= f.text_field :title %>
-  <%= f.text_area :description %>
-  <%= f.number_field :price %>
+  <p> <b>Product name : </b><%= f.text_field :title %></p>
+  <p> <b>Product Description : </b><%= f.text_area :description %></p>
+  <p> <b>Price : </b><%= f.number_field :price %></p>
   <%= f.submit %>
 <% end %>
