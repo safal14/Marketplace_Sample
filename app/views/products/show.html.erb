@@ -43,7 +43,12 @@
 </style>
 
 <div class="product-details">
+<% if @product.image.attached? %>
 
+  <%= image_tag @product.image,
+      width: 300 %>
+
+<% end %>
   <h2><%= @product.title %></h2>
 
   <p><%= @product.description %></p>

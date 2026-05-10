@@ -82,6 +82,12 @@ button:hover {
 <div id="products" class="grid-view">
   <% @products.each do |product| %>
     <div class="product-card">
+    <% if product.image.attached? %>
+
+  <%= image_tag product.image,
+      width: 200 %>
+
+<% end %>
       <p>
         <%= link_to product.title, product_path(product) %> - Rs <%= product.price %>
       </p>

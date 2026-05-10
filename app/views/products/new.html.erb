@@ -96,7 +96,11 @@ input[type="submit"]:hover {
     <b>Price :</b><br>
     <%= f.number_field :price %>
   </p>
-
+  
+  <p>
+  <b>Product Image :</b><br>
+  <%= f.file_field :image %>
+</p>
   <%= f.submit "Create Product" %>
   <%= link_to "Go Back", products_path %>
 <% end %>
