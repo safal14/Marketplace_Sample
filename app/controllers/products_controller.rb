@@ -20,7 +20,7 @@ end
     if @product.save
       redirect_to @product
     else
-      render :new
+    render :new, status: :unprocessable_entity
     end
   end
   def destroy
