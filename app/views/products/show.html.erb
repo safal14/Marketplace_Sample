@@ -1,6 +1,65 @@
+<style>
+.product-details {
+  width: 500px;
+  margin: 40px auto;
+  padding: 25px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
 
-<h2><%= @product.title %></h2>
-<p><%= @product.description %></p>
-<p>Price: Rs <%= @product.price %></p>
-<p><%= link_to "Delete", product_path(@product),
-        data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></p>
+.product-details h2 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.product-details p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #28a745;
+}
+
+.delete-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 16px;
+  background: #dc3545;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.delete-btn:hover {
+  background: #b02a37;
+}
+</style>
+
+<div class="product-details">
+
+  <h2><%= @product.title %></h2>
+
+  <p><%= @product.description %></p>
+
+  <p class="price">
+    Price: Rs <%= @product.price %>
+  </p>
+
+  <p>
+    <%= link_to "Delete",
+        product_path(@product),
+        class: "delete-btn",
+        data: {
+          turbo_method: :delete,
+          turbo_confirm: "Are you sure?"
+        } %>
+  </p>
+
+</div>
